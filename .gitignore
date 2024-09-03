@@ -1,0 +1,8 @@
+# Avoid importing the node_modules folder:
+node_modules
+
+# Avoid importing the .next folder:
+.next
+
+# Avoid importing the .env file:
+.env
