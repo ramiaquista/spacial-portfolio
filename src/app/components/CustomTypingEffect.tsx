@@ -6,7 +6,10 @@ interface CustomTypingEffectProps {
   className?: string;
 }
 
-const CustomTypingEffect: React.FC<CustomTypingEffectProps> = ({ texts, className }) => {
+const CustomTypingEffect: React.FC<CustomTypingEffectProps> = ({
+  texts,
+  className,
+}) => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isTypingComplete, setIsTypingComplete] = useState(false);
 
@@ -27,17 +30,13 @@ const CustomTypingEffect: React.FC<CustomTypingEffectProps> = ({ texts, classNam
       ) : (
         <ReactTypingEffect
           text={[texts[currentTextIndex]]}
-          cursorRenderer={cursor => <h2>{cursor}</h2>}
           speed={100} // Increase typing speed (lower number = faster)
           eraseSpeed={100} // This won't matter as we're not erasing
           typingDelay={0} // Start typing immediately
           eraseDelay={1000000} // Set a very long delay to prevent erasing
           displayTextRenderer={(text) => {
-            return (
-              <h2>{text}</h2>
-            );
+            return <h2>{text}</h2>;
           }}
-          onTypingDone={() => setIsTypingComplete(true)}
         />
       )}
     </div>

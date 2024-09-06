@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Your Name - Web Developer Portfolio",
-  description: "Portfolio showcasing the skills and experience of Your Name, a web developer specializing in React and Node.js",
+  title: 'Ramiro Aquistapace',
+  description:
+    'Portfolio showcasing the skills and experience of Ramiro Aquistapace, a Senior Software engineer',
 };
 
 export default function RootLayout({
