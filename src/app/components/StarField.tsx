@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from 'react';
 
 interface Star {
   x: number;
@@ -15,7 +15,7 @@ const StarField: React.FC = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     canvas.width = window.innerWidth;
@@ -26,7 +26,7 @@ const StarField: React.FC = () => {
     const maxDepth = 1000;
 
     // Color palette for stars
-    const starColors = ["#ffffff", "#ffe9c4", "#d4fbff"];
+    const starColors = ['#ffffff', '#ffe9c4', '#d4fbff'];
 
     for (let i = 0; i < numStars; i++) {
       stars.push({
@@ -39,7 +39,8 @@ const StarField: React.FC = () => {
     }
 
     function animate() {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.1)"; // Create a trail effect
+      if (!ctx || !canvas) return;
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'; // Create a trail effect
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       stars.forEach((star) => {
@@ -74,10 +75,10 @@ const StarField: React.FC = () => {
       canvas.height = window.innerHeight;
     };
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
